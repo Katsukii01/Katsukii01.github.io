@@ -149,7 +149,7 @@ body {
 
                
                 <div class="row">
-                    <div class="section-content col-md-4 container">
+                    <div class="section-content col-md-4 container mt-4">
                         <!-- photo -->
                         <img src="pfp.jpg" class="rounded-circle border-shadow" style="width: 150px;" alt="Avatar" />
                         <br><br>
@@ -160,7 +160,7 @@ body {
                         <p class="font-weight-bold">Date of Birth:<a class="font-weight-normal text-muted"> 25.05.2001</a></p>
                     </div>
                     
-                    <div class="col-md-5 container justify-content-center mt-4">
+                    <div class="col-md-5 container justify-content-center mt-4 elem">
                         <div class="section-header ">
                             <h2 class="section-title">About me</h2>
                         </div>
@@ -264,7 +264,7 @@ body {
                     </div>
                 </div>
                 
-                <div class="row justify-content-center">
+                <div class="row justify-content-center elem">
                     <div class="container" style="background: rgb(23,23,23);
                     background: linear-gradient(9deg, rgba(23,23,23,1) 3%, rgba(22,21,21,1) 13%, rgba(14,9,9,1) 30%, rgba(61,55,55,1) 100%);">
                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -370,7 +370,7 @@ body {
                     </div>
                 </div>
 
-                <div class="row justify-content-center">
+                <div class="row justify-content-center elem">
                     <div class="section-content" >
                         <!-- photo -->
                         <img src="ans.png" class="rounded-circle border" style="width: 100px;" alt="ans" />
@@ -406,7 +406,7 @@ body {
                     </div>
                 </div>
 
-                <div class="row justify-content-center">
+                <div class="row justify-content-center elem">
                     <div class="container" style="background: rgb(23,23,23);
                     background: linear-gradient(9deg, rgba(23,23,23,1) 3%, rgba(22,21,21,1) 13%, rgba(14,9,9,1) 30%, rgba(61,55,55,1) 100%);">
                         <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel"  >
@@ -495,22 +495,24 @@ body {
         function isScrolledIntoView(elem) {
             var docViewTop = $(window).scrollTop();
             var docViewBottom = docViewTop + $(window).height();
-            var elemTop = $(elem).offset().top;
-            var elemBottom = elemTop + $(elem).height();
+            var elemTop = ($(elem).offset().top)-30;
+            var elemBottom = (elemTop + $(elem).height())-30;
             return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
         }
-        $('.row').each(function() {
+        
+        $('.section-content, .elem').each(function() {
             if (isScrolledIntoView(this)) {
                 $(this).addClass('fadeInRight');
             }
         });
 
+
         // Funkcja obsługująca efekt fadeIn i fadeOut dla widocznych i niewidocznych wierszy podczas przewijania
         function fadeInVisibleRows() {
-    $('.section-content, .row').each(function() {
-        if (isScrolledIntoView(this)) {
+    $('.section-content, .elem').each(function() {
+        if (!$(this).hasClass('fadeInRight') && isScrolledIntoView(this)) {
             $(this).addClass('fadeInRight').removeClass('fadeOutLeft');
-        } else {
+        } else if ($(this).hasClass('fadeInRight') && !isScrolledIntoView(this)) {
             $(this).removeClass('fadeInRight').addClass('fadeOutLeft');
         }
     });
