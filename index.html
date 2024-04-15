@@ -45,7 +45,9 @@ body {
             margin-right: 5px; /* Odstęp między ikonami */
         }
 
-
+.elem, .section-content {
+    opacity: 0;
+}
 .progress-bar {
     background-color: lightgray; /* Kolor tła paska postępu */
     width: 300px;
@@ -134,7 +136,7 @@ body {
 
     </style>
 </head>
-<body onload="showSkills()">
+<body >
     <div id="my-cv">
         <main class="py-4">
         <div class="container" style="background: rgb(154,154,154);
@@ -204,7 +206,7 @@ body {
                 </div>
 
                 <div class="row justify-content-center" > 
-                    <div class="section-content">
+                    <div class="section-content" id="element">
                         <a>CSS/HTML:</a>
                             <div class="progress-bar">
                                 <div class="progress" id="css-html-progress" style="width: 0;">
@@ -484,7 +486,13 @@ body {
                         </div>
                     </div>
                 </div>
-        
+                <div class="row">
+                    <br>
+                    <br>
+                    <br>
+                </div>
+                <br>
+                <hr class="border border-dark border-3 opacity-75">
             </div>
         </main>
     </div>
@@ -499,7 +507,7 @@ body {
             var elemBottom = (elemTop + $(elem).height())-30;
             return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
         }
-        
+
         $('.section-content, .elem').each(function() {
             if (isScrolledIntoView(this)) {
                 $(this).addClass('fadeInRight');
@@ -553,6 +561,28 @@ body {
                 }
             }
         }
+
+
+// Funkcja, która uruchamia się za każdym razem, gdy mutuje element
+const observer = new MutationObserver(function(mutationsList) {
+  for(let mutation of mutationsList) {
+    if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+      const target = mutation.target;
+      if (target.classList.contains('fadeInRight')) {
+        showSkills();
+      }
+    }
+  }
+});
+
+// Wybierz element, którego mutacje chcesz obserwować
+const targetNode = document.getElementById('element');
+
+// Konfiguracja obserwatora mutacji
+const config = { attributes: true, attributeFilter: ['class'] };
+
+// Uruchomienie obserwatora na wybranym elemencie z określoną konfiguracją
+observer.observe(targetNode, config);
     </script>
 </body>
 </html>
