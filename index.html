@@ -513,8 +513,8 @@ background: linear-gradient(25deg, rgba(46,46,46,1) 0%, rgba(5,5,4,1) 24%, rgba(
         function isScrolledIntoView(elem) {
             var docViewTop = $(window).scrollTop();
             var docViewBottom = docViewTop + $(window).height();
-            var elemTop = ($(elem).offset().top)+20;
-            var elemBottom = (elemTop + $(elem).height())-80;
+            var elemTop = ($(elem).offset().top)-50;
+            var elemBottom = (elemTop + $(elem).height())-75;
             return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
         }
 
