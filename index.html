@@ -70,17 +70,18 @@ background: linear-gradient(25deg, rgba(46,46,46,1) 0%, rgba(5,5,4,1) 24%, rgba(
     line-height: 25px; /* Ustawienie wysokości tekstu */
     color: white; /* Kolor tekstu */
 }
+
 .fadeInRight {
-    animation: fadeInRight 2s ease forwards;
+    animation: fadeInRight 3s ease forwards;
     opacity: 0;
-    transform: translateX(75px);
+    transform: translateX(8%);
 }
 
 /* Definicja animacji */
 @keyframes fadeInRight {
     from {
         opacity: 0;
-        transform: translateX(75px);
+        transform: translateX(8%);
     }
     to {
         opacity: 1;
@@ -89,9 +90,9 @@ background: linear-gradient(25deg, rgba(46,46,46,1) 0%, rgba(5,5,4,1) 24%, rgba(
 }
 
 .fadeOutLeft {
-    animation: fadeOutLeft 2s ease backwards;
+    animation: fadeOutLeft 3s ease backwards;
     opacity: 0;
-    transform: translateX(75px);
+    transform: translateX(8%);
 }
 
 /* Definicja animacji */
@@ -102,7 +103,7 @@ background: linear-gradient(25deg, rgba(46,46,46,1) 0%, rgba(5,5,4,1) 24%, rgba(
     }
     to {
         opacity: 0;
-        transform: translateX(75px);
+        transform: translateX(8%);
     }   
 }
 
@@ -133,7 +134,13 @@ background: linear-gradient(25deg, rgba(46,46,46,1) 0%, rgba(5,5,4,1) 24%, rgba(
     color: transparent;
 
 }
-
+.totoro {
+    position: fixed;
+    bottom: -0.5vh; /* Odległość od dołu strony równa 1% wysokości widoku */
+    right: -0.3vw; /* Odległość od lewej strony równa 1% szerokości widoku */
+    width: 16vw; /* Szerokość równa 10% szerokości widoku */
+    height: 20vw; /* Wysokość równa 20% wysokości widoku */
+}
 .empty {
     color: #ccc; /* Kolor gwiazdek, które są puste */
 }
@@ -497,6 +504,7 @@ background: linear-gradient(25deg, rgba(46,46,46,1) 0%, rgba(5,5,4,1) 24%, rgba(
                 <hr class="border border-dark border-3 opacity-75">
             </div>
         </main>
+        <img class="totoro" src="totoro.gif">
     </div>
 
     <!-- jQuery -->
@@ -505,7 +513,7 @@ background: linear-gradient(25deg, rgba(46,46,46,1) 0%, rgba(5,5,4,1) 24%, rgba(
         function isScrolledIntoView(elem) {
             var docViewTop = $(window).scrollTop();
             var docViewBottom = docViewTop + $(window).height();
-            var elemTop = ($(elem).offset().top)-80;
+            var elemTop = ($(elem).offset().top)+20;
             var elemBottom = (elemTop + $(elem).height())-80;
             return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
         }
