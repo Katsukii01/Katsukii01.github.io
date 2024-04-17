@@ -150,11 +150,151 @@ background: linear-gradient(25deg, rgba(46,46,46,1) 0%, rgba(5,5,4,1) 24%, rgba(
     border-radius: 15px 70px 15px 70px;
     box-shadow: 3px 6px 10px rgba(255, 255, 255, 0.8);
 }
-    </style>
+
+.roof-back{
+    background: rgb(46,46,46);
+background: linear-gradient(25deg, rgba(46,46,46,1) 0%, rgba(5,5,4,1) 24%, rgba(7,8,0,1) 36%, rgba(0,0,0,1) 48%, rgba(115,115,115,1) 100%);
+}
+
+.house-roof1{
+ z-index: 1;
+  width: 95vw;
+  height:  20vh;
+  clip-path: polygon(100% 100%, 100% 85%, 93% 94%, 63% 57%, 37% 57%, 7% 93%, 0 85%, 0% 99%);
+}
+.house-roof2{
+  z-index: 2;
+  width: 85vw;
+  height:  27vh;
+  clip-path: polygon(100% 100%, 100% 85%, 93% 94%, 63% 57%, 37% 57%, 7% 93%, 0 85%, 0% 99%);
+  margin-bottom: -14vh;
+}
+.house-roof3{
+ z-index: 3;
+  width: 60vw;
+  height:  16vh;
+  clip-path: polygon(100% 100%, 100% 85%, 93% 94%, 63% 57%, 37% 57%, 7% 93%, 0 85%, 0% 99%);
+  margin-bottom: -18vh;
+}
+
+
+
+.house-top{
+ z-index: 4;
+  width: 25vw;
+  height: 7vh;
+  clip-path: polygon(100% 100%, 100% 85%, 93% 94%, 50% 0, 50% 0, 7% 93%, 0 85%, 0% 99%);
+  margin-bottom: -9.5vh;
+}
+.roof {
+    display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+justify-content: flex-end;
+align-items: center;
+align-content: center;
+    padding: 0;
+}
+.sign{
+position: relative;
+font-size: calc(8px + 0.7vw);
+display: flex;
+flex-direction: column;
+align-items: center;
+align-content: center;
+min-width: fit-content;
+min-height: fit-content;
+background-color: #000000;
+}
+.ts{
+    color: rgba(196, 59, 17, 0.863);
+}
+.left-lights,
+.right-lights { 
+  padding-top: 3vh;
+  position: relative;
+  top: -1vh;
+  width: 5vw;
+  height: 12vh;
+  border-radius: 8px;
+  background-color: rgb(196, 58, 17);
+  animation: glow 1s infinite alternate;
+}
+
+.line{
+    position: relative;
+    top: -0.5vh;
+    width: 0.1vw;
+    height: 4vh;
+    background-color: black;
+}
+.LineLeft{
+    left: 2.5vw;
+}
+.LineRight{
+    right: 2.5vw;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgb(224, 68, 20);;
+  }
+  100% {
+    box-shadow: 0 0 40px rgb(224, 68, 20);;
+  }
+}
+.lampy{
+    display: flex;
+    flex-direction: row;
+}
+
+    </style>    
 </head>
 <body >
     <div id="my-cv">
         <main class="py-4">
+
+            <div class="roof ">
+                <div class="house-top roof-back"></div> 
+                <div class="house-roof3 roof-back"></div>  
+                <div class="house-roof2 roof-back"></div>
+                 <div style=" margin-bottom: -16.5vh;">
+                    <div class="house-roof1 roof-back">
+                    </div> 
+
+                    <div class="lampy">
+                        <div class="col-md-6">
+                            <div class="col-md-12">
+                                <div class="line LineLeft"></div>
+                                <div class="left-lights">
+                                    <div class="sign">
+                                        <a class="ts">幸</a>
+                                        <a class="ts">運</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 d-flex justify-content-end">
+                            <div class="col-md-12">
+                                <div class="d-flex justify-content-end">
+                                    <div class="line LineRight"></div>
+                                </div>
+                                <div class="d-flex justify-content-end">
+                                    <div class="right-lights">
+                                        <div class="sign">
+                                            <a class="ts">幸</a>
+                                            <a class="ts">運</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>   
+                        </div>
+ 
+                    </div>
+                 </div> 
+            </div>
+
         <div class="container" style="background: rgba(0,0,0,0);
          ">
             
