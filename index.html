@@ -31,6 +31,7 @@ body {
             background: linear-gradient(25deg, rgba(46,46,46,1) 0%, rgba(5,5,4,1) 24%, rgba(7,8,0,1) 36%, rgba(0,0,0,1) 48%, rgba(115,115,115,1) 100%);
             border-radius: 25px;
             box-shadow: 3px 6px 10px rgba(255, 255, 255, 0.8); /* cień */
+            z-index: -1;
         }
 
         main {
@@ -213,10 +214,10 @@ background-color: #000000;
 }
 .left-lights,
 .right-lights { 
-  padding-top: 3vh;
+  padding-top: calc(2px + 3vh);
   position: relative;
   top: -1vh;
-  width: 5vw;
+  width: calc(50px + 4vw);
   height: 12vh;
   border-radius: 8px;
   background-color: rgb(196, 58, 17);
@@ -227,14 +228,14 @@ background-color: #000000;
     position: relative;
     top: -0.5vh;
     width: 0.1vw;
-    height: 4vh;
+    height: 11vh;
     background-color: black;
 }
 .LineLeft{
-    left: 2.5vw;
+    left: calc(25px + 2vw);
 }
 .LineRight{
-    right: 2.5vw;
+    right: calc(25px + 2vw);
 }
 
 @keyframes glow {
@@ -260,7 +261,7 @@ background-color: #000000;
                 <div class="house-top roof-back"></div> 
                 <div class="house-roof3 roof-back"></div>  
                 <div class="house-roof2 roof-back"></div>
-                 <div style=" margin-bottom: -18vh;">
+                 <div style=" margin-bottom: -23.5vh;">
                     <div class="house-roof1 roof-back">
                     </div> 
 
@@ -297,8 +298,7 @@ background-color: #000000;
                  </div> 
             </div>
 
-        <div class="container" style="background: rgba(0,0,0,0);
-         ">
+        <div class="container" style="background: rgba(0,0,0,0);">
             
              <!-- Personal information + photo -->
                 <div class="row d-flex justify-content-center">
